@@ -5,4 +5,4 @@ Der Zustand des eigenen Programms wird über das `useSchedule`-Composable verwal
 # Datenfluss
 Die Composables stellen stets die Single-Source-of-Truth für ihre zugeordneten Datenobjekte dar und Operationen auf den Datensets laufen ausschließlich über sie ab. Um Redundanz in der Nutzung der Composables zu vermeiden werden diese exklusiv von den Pages verwendet und Kind-Komponenten erhalten Daten über Props. Im Umkehrschluss bedeutet das ebenfalls, dass Kind-Komponenten Events nutzen müssen, um gewünschte Aktionen an die Pages zurückzuleiten. Events sollen sofern möglich nur IDs und keine vollen Objekte übertragen, um den Datenfluss möglichst minimal zu gestalten.
 
-![[Datenflussdiagramm.jpg]]
+<img width="1892" height="1188" alt="Datenflussdiagramm" src="https://github.com/user-attachments/assets/f9744ee0-9401-43a7-9baa-2a5d545a58d3" />
