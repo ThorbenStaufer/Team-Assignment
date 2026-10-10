@@ -6,7 +6,7 @@ import type { Track } from "./track"
 export interface Conference {
     name: string,
     tagline: string,
-    dates: Date[],
+    dates: string[],
     location: string,
     timezone: string
     tracks: Track[],
