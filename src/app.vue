@@ -1,6 +1,9 @@
+<script setup lang="ts">
+const conference = useConference();
+</script>
+
 <template>
   <div>
-    <NuxtRouteAnnouncer />
-    <NuxtWelcome />
+    Number of sessions: {{ conference.sessions.length }}
   </div>
 </template>
