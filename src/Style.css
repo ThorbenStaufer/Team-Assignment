@@ -1,0 +1,113 @@
+/* Primitive Tokens */
+:root {
+    /* Colors – Neutral */
+    --color-neutral-0: #ffffff;
+    --color-neutral-50: #f8faff;
+    --color-neutral-100: #f1f5fc;
+    --color-neutral-200: #e2e8f2;
+    --color-neutral-300: #cbd5e1;
+    --color-neutral-500: #64748b;
+    --color-neutral-700: #334155;
+    --color-neutral-900: #0f172a;
+    --color-neutral-950: #080d18;
+
+    /* Colors – Primary */
+    --color-primary-50: #eff6ff;
+    --color-primary-100: #dbeafe;
+    --color-primary-300: #93c5fd;
+    --color-primary-500: #0156d7;
+    --color-primary-600: #003e9f;
+    --color-primary-700: #00276b;
+
+    /* Colors – Secondary */
+    --color-secondary-100: #e0f2fe;
+    --color-secondary-300: #7dd3fc;
+    --color-secondary-500: #38bdf8;
+    --color-secondary-700: #0369a1;
+
+    /* Feedback Colors */
+    --color-success-500: #14b0bd;
+    --color-warning-500: #ffb467;
+    --color-error-500: #e1226c;
+
+    /* Spacing */
+    --space-1: 4px;
+    --space-2: 8px;
+    --space-3: 12px;
+    --space-4: 16px;
+    --space-5: 24px;
+    --space-6: 32px;
+    --space-8: 48px;
+    --space-10: 64px;
+    --space-12: 80px;
+
+    /* Typography */
+
+    /* Font Families */
+    --font-sans: Inter, Arial, sans-serif;
+    --font-heading: Inter, Arial, sans-serif;
+    --font-mono: "SFMono-Regular", Consolas, monospace;
+
+    /* Font Sizes */
+    --font-size-xs: 12px;
+    --font-size-sm: 14px;
+    --font-size-md: 16px;
+    --font-size-lg: 20px;
+    --font-size-xl: 28px;
+    --font-size-2xl: 40px;
+    --font-size-3xl: 64px;
+
+    /* Font Weights */
+    --font-weight-regular: 400;
+    --font-weight-medium: 500;
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+
+    /* Line Heights */
+    --line-height-tight: 1.1;
+    --line-height-normal: 1.5;
+    --line-height-relaxed: 1.7;
+
+    /* Border Radius */
+    --radius-sm: 8px;
+    --radius-md: 12px;
+    --radius-lg: 20px;
+    --radius-xl: 28px;
+    --radius-full: 999px;
+}
+
+/* Semantic Tokens */
+:root {
+    /* Backgrounds */
+    --color-surface: var(--color-neutral-0);
+    --color-surface-secondary: var(--color-neutral-50);
+    --color-surface-muted: var(--color-neutral-100);
+
+    /* Text */
+    --color-text-primary: var(--color-neutral-950);
+    --color-text-secondary: var(--color-neutral-500);
+    --color-text-inverse: var(--color-neutral-0);
+
+    /* Borders */
+    --color-border: var(--color-neutral-200);
+    --color-border-strong: var(--color-neutral-300);
+
+    /* Primary actions */
+    --color-action-primary: var(--color-primary-600);
+    --color-action-primary-hover: var(--color-primary-700);
+    --color-action-primary-text: var(--color-neutral-0);
+
+    /* Secondary actions */
+    --color-action-secondary: var(--color-primary-50);
+    --color-action-secondary-hover: var(--color-primary-100);
+    --color-action-secondary-text: var(--color-primary-700);
+
+    /* Links / highlights */
+    --color-link: var(--color-primary-600);
+    --color-highlight: var(--color-primary-500);
+
+    /* Feedback */
+    --color-success: var(--color-success-500);
+    --color-warning: var(--color-warning-500);
+    --color-error: var(--color-error-500);
+}
