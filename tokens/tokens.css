@@ -9,7 +9,7 @@
     --color-neutral-500: #64748b;
     --color-neutral-700: #334155;
     --color-neutral-900: #0f172a;
-    --color-neutral-950: #080d18;
+    --color-neutral-950: #0b162d;
 
     /* Colors – Primary */
     --color-primary-50: #eff6ff;
@@ -45,7 +45,6 @@
 
     /* Font Families */
     --font-sans: Inter, Arial, sans-serif;
-    --font-heading: Inter, Arial, sans-serif;
     --font-mono: "SFMono-Regular", Consolas, monospace;
 
     /* Font Sizes */
@@ -83,17 +82,31 @@
     --color-surface-secondary: var(--color-neutral-50);
     --color-surface-muted: var(--color-neutral-100);
 
-    /* Text */
+    /* Text color */
     --color-text-primary: var(--color-neutral-950);
     --color-text-secondary: var(--color-neutral-500);
     --color-text-inverse: var(--color-neutral-0);
+
+    /* Typography */
+    --font-body: var( --font-sans);
+    --font-heading: var( --font-sans);
+
+    --font-size-body: var(--font-size-md);
+    --font-size-heading: var(--font-size-2xl);
+
+    --font-weight-body: var( --font-weight-regular);
+    --font-weight-heading: var( --font-weight-bold);
+
+    /* Spacing */
+    --spacing-card-padding: var(--space-6);
+    --spacing-section: var(--space-8);
 
     /* Borders */
     --color-border: var(--color-neutral-200);
     --color-border-strong: var(--color-neutral-300);
 
     /* Primary actions */
-    --color-action-primary: var(--color-primary-600);
+    --color-action-primary: var(--color-primary-500);
     --color-action-primary-hover: var(--color-primary-700);
     --color-action-primary-text: var(--color-neutral-0);
 
@@ -101,6 +114,9 @@
     --color-action-secondary: var(--color-primary-50);
     --color-action-secondary-hover: var(--color-primary-100);
     --color-action-secondary-text: var(--color-primary-700);
+
+    --color-shadow: var(--color-primary-300);
+    --color-shadow-light: var(--color-primary-100);
 
     /* Links / highlights */
     --color-link: var(--color-primary-600);

@@ -1,9 +1,8 @@
 <script setup lang="ts">
-const conference = useConference();
+import Index from "~/pages/index.vue";
+
 </script>
 
 <template>
-  <div>
-    Number of sessions: {{ conference.sessions.length }}
-  </div>
+  <index/>
 </template>
