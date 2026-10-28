@@ -12,5 +12,6 @@ npm install
 ## Compile and Run
 Build the project and open a new browser tab to the localhost server:
 ```
+npx nuxt build
 npm run dev -- -o
 ```
