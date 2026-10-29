@@ -11,7 +11,7 @@ Die Speaker-Profile werden bereits beim Erstellen der Website als fertige HTML-S
 ### Option 2: Server-side Rendering (SSR): 
 Die Profile werden bei jeder Anfrage am Server erstellt. Dadurch könnten Änderungen sofort angezeigt werden, allerdings ist das für unsere weitgehend gleichbleibenden Daten nicht notwendig.
 ## Entscheidung
-Wir entscheiden uns für SSG, da die Speaker-Profile hauptsächlich aus statischen Inhalten bestehen. Diese können bereits beim Build erstellt und anschließend schnell ausgeliefert werden. Damit folgen wir auch der im Szenario vorgeschlagenen Rendering-Strategie.
+Wir entscheiden uns für SSG, da die Speaker-Profile hauptsächlich aus statischen Inhalten bestehen. Diese können bereits beim Build erstellt und anschließend schnell ausgeliefert werden. 
 ## Konsequenzen
 ### Positiv
 Die Seiten laden schnell und benötigen weniger Serverleistung. Außerdem sind die Inhalte direkt als HTML verfügbar, was für Suchmaschinen vorteilhaft ist.
@@ -19,5 +19,21 @@ Die Seiten laden schnell und benötigen weniger Serverleistung. Außerdem sind d
 Wenn sich eine Speaker Information ändert, muss die Seite neu gebaut und veröffentlicht werden. Änderungen sind daher nicht automatisch sofort sichtbar.
 
 # Session-Detailseiten
+
 # Session-Übersicht
+## Kontext
+Die Session-Übersicht zeigt alle Vorträge der Konferenz mit Informationen wie Titel, Speaker, Uhrzeit und Raum. Diese Daten könnten sich kurzfristig noch ändern, zb wenn ein Vortrag verschoben wird oder ein anderer Raum verwendet werden muss. Außerdem können Nutzer*innen die Sessions nach Track, Tag, Level, und Speaker filtern.
+## Optionen
+### Option 1: Server-side Rendering (SSR): 
+Die Session-Übersicht wird bei einer Anfrage am Server erstellt. Dadurch können aktuelle Daten angezeigt werden, ohne die gesamte Website neu bauen zu müssen.
+### Option 2: Incremental Static Regeneration (ISR):
+Die Seite wird zunächst statisch erstellt und nach bestimmten Zeitabständen aktualisiert. Das spart Serverleistung, allerdings können Änderungen erst mit Verzögerung sichtbar werden.
+## Entscheidung
+Wir entscheiden uns für SSR, da sich der Zeitplan einer Konferenz ändern kann und aktuelle Informationen wichtig sind. Die Filter können trotzdem direkt im Browser umgesetzt werden.
+## Konsequenzen
+### Positiv
+Änderungen am Zeitplan können bei einer neuen Anfrage direkt berücksichtigt werden. Außerdem ist die Übersicht bereits beim Laden als HTML verfügbar.
+### Negativ
+Der Server muss die Seite bei jeder Anfrage erstellen, was mehr Ressourcen benötigt. Da wir kein echtes Live-Backend verwenden, können wir die Aktualisierung nur simulieren.
+
 # "Mein Programm" Dashboard
