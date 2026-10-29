@@ -1,3 +1,4 @@
+import type { Room } from "~/types/room";
 import type { Session, SessionLevel } from "~/types/session";
 import type { Track } from "~/types/track";
 
@@ -20,10 +21,11 @@ export function useSessions() {
 
     const availableTracks = computed<Track[]>(() => conference.value.tracks);
     const availableDays = computed<string[]>(() => conference.value.dates);
+    const availableRooms = computed<Room[]>(() => conference.value.rooms);
 
     function getSession(id: string): Session | undefined {
         return conference.value.sessions.find((session) => session.id === id);
     }
 
-    return { selectedTrackId, selectedDay, selectedLevel, filteredSessions, availableTracks, availableDays, getSession };
+    return { selectedTrackId, selectedDay, selectedLevel, filteredSessions, availableTracks, availableDays, availableRooms, getSession };
 }
