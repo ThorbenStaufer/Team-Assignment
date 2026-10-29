@@ -91,6 +91,8 @@
     --font-body: var( --font-sans);
     --font-heading: var( --font-sans);
 
+    --font-size-small-body: var(--font-size-sm);
+    --font-size-large-body: var(--font-size-lg);
     --font-size-body: var(--font-size-md);
     --font-size-heading: var(--font-size-2xl);
 
@@ -104,6 +106,9 @@
     /* Borders */
     --color-border: var(--color-neutral-200);
     --color-border-strong: var(--color-neutral-300);
+
+    /* Border Radius */
+    --radius-card: var(--radius-lg);
 
     /* Primary actions */
     --color-action-primary: var(--color-primary-500);
