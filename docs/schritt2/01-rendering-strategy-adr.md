@@ -19,6 +19,20 @@ Die Seiten laden schnell und benötigen weniger Serverleistung. Außerdem sind d
 Wenn sich eine Speaker Information ändert, muss die Seite neu gebaut und veröffentlicht werden. Änderungen sind daher nicht automatisch sofort sichtbar.
 
 # Session-Detailseiten
+## Kontext
+Die Detail-Informationen der individuellen Sessions sollen jeweils auf einer eigenen Seite dargestellt werden. Dabei werden Titel, Abstract, Zeit (Tag, Start-/Endzeit), Raum, Track, Level, Format, sowie Links zu den zugehörigen Speaker Profilen für die Session angezeigt. Wie auch die restlichen Konferenz-Daten werden sich auch die Session-Details nicht über Zeit ändern.
+## Optionen
+### Option 1: Static Site Generation (SSG):
+Die Detail-Seiten werden bereits zur Build-Zeit prä-generiert und auf Anfrage statisch ausgeliefert. Die Dateien werden nachträglich nicht neu gebaut und bleiben bis zum nächsten Rebuild der Applikation unverändert.
+### Option 2: Server-side Rendering (SSR):
+Der Server baut die Detail-Seiten bei jedem Aufruf neu und liefert dann das vollständige Bundle an den Client aus, ohne das dieser weitere Operationen durchführen muss. Tauscht erhöhte, erstmalige Ladezeit gegen sofortige Interaktivität.
+## Entscheidung
+Da sich unsere Konferenz-Daten nicht verändern können die Detail-Seiten ohne Probleme statisch ausgeliefert werden. Daher werden diese mittel SSG gerendert.
+## Konsequenzen
+### Positiv
+Auslieferung der Detail-Seiten an den Konsumenten ist ohne Wartezeiten möglich.
+### Negativ
+Da die Anzahl der zu generierenden Seiten abhängig von den in den Konferenz-Daten abgelegten Sessions abhängig ist, benötigt es etwas mehr Konfiguration als für out-of-the-box SSR.
 
 # Session-Übersicht
 ## Kontext
