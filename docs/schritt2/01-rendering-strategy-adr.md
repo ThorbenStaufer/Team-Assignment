@@ -51,3 +51,17 @@ Wir entscheiden uns für SSR, da sich der Zeitplan einer Konferenz ändern kann 
 Der Server muss die Seite bei jeder Anfrage erstellen, was mehr Ressourcen benötigt. Da wir kein echtes Live-Backend verwenden, können wir die Aktualisierung nur simulieren.
 
 # "Mein Programm" Dashboard
+## Kontext
+Ein Nutzer kann Sessions zu deren persönlichen "Programm" hinzufügen. Die Übersicht über dieses "Programm" soll in einem eigenen Dashboard stattfinden, welches die gespeicherten Sessionen im lokalen Speicher des Clients persistiert, damit die Daten auch nach einem Re-Load erhalten bleiben.
+## Optionen
+### Option 1: Server-side Rendering
+Die Liste der Sessions im eigenen "Programm" wird am Server prä-generiert und anschließend über Lifecycle-Hooks im Client hydriert.
+### Option 2: Client-side Rendering
+Die gesamte Seite wird direkt im Client gerendert, der Server schickt nur ein Skript-Bundle aus. Ermöglicht direkten Zugriff auf den lokalen Speicher ohne Umwege über Lifecycle-Hooks.
+## Entscheidung
+Da die Seite abseits von den Session im "Programm" keine Inhalte zum Anzeigen hat, lohnt es sich nicht diese am Server mittel SSR vorab zu rendern und später zu hydrieren. Daher werden wir das Dashboard direkt im Client mittels CSR bauen.
+## Konsequenzen
+### Positiv
+Es werden keine Lifecycle-Hooks benötigt, um auf das persistierte Programm zugreifen zu können, die Daten stehen bereits zur Build-Zeit zur Verfügung.
+### Negativ
+Es werden Rechenressourcen des Client benötigt, um die Seite darstellen zu können.
