@@ -27,5 +27,11 @@ export function useSessions() {
         return conference.value.sessions.find((session) => session.id === id);
     }
 
-    return { selectedTrackId, selectedDay, selectedLevel, filteredSessions, availableTracks, availableDays, availableRooms, getSession };
+    function getSessionsBySpeaker(speakerId: string): Session[] {
+        return conference.value.sessions.filter((session) =>
+            session.speakerIds.includes(speakerId)
+        );
+    }
+
+    return { selectedTrackId, selectedDay, selectedLevel, filteredSessions, availableTracks, availableDays, availableRooms, getSession, getSessionsBySpeaker };
 }

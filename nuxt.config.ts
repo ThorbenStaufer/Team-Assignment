@@ -10,14 +10,19 @@ export default defineNuxtConfig({
   // rendering strategy configuration
   routeRules: {
     '/schedule': { ssr: false },
-    '/sessions/**': { prerender: true }
+    '/sessions/**': { prerender: true },
+    '/speakers/**': { prerender: true }
   },
 
   // static route list
   nitro: {
     prerender: {
-      routes: conferenceData.sessions.map((session) => `/sessions/${session.id}`),
-      crawlLinks: false,
+      routes: [
+        ...conferenceData.sessions.map((session) => `/sessions/${session.id}`),
+
+        ...conferenceData.speakers.map((speaker) => `/speakers/${speaker.id}`),
+      ],
+        crawlLinks: false,
     }
   }
 })
