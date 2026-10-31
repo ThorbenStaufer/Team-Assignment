@@ -1,5 +1,6 @@
 <script setup lang="ts">
 const conference = useConference();
+navigateTo('/sessions');
 </script>
 
 <template>

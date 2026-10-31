@@ -80,12 +80,4 @@ if (!session) {
     justify-content: space-evenly;
     gap: 1rem;
 }
-
-.navigation-link {
-    color: var(--color-link);
-}
-
-.navigation-link:hover {
-    color: var(--color-link-highlight);
-}
 </style>
