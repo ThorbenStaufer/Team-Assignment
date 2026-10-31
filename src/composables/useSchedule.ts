@@ -6,6 +6,9 @@ export function useSchedule() {
     const { availableRooms } = useSessions();
 
     function addSession(session: Session): void {
+        if (mySchedule.value.some((entry) => entry.sessionId === session.id)) {
+            return;
+        }
         const scheduleItem: Schedule = {
             sessionId: session.id,
             day: session.day,
