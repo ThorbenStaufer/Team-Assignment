@@ -26,7 +26,7 @@ Ich wollte herausfinden, warum meine Speaker-Seiten nicht gefunden wurden und be
 
 ## 31.10.26 ChatGPT
 ### Prompt:
-Ich muss eine Session-Übersicht für alle 20 Vorträge unserer Konferenz erstellen. Die Sessions sollen nach Track, Konferenztag und Level gefiltert werden können. Alle Filter müssen gleichzeitig funktionieren (UND-Verknüpfung). Wie erweitere ich dafür mein bestehendes useSessions-Composable und wie teile ich die Umsetzung sinnvoll auf SessionFilterBar, SessionList und die Übersichtsseite auf? Außerdem haben wir uns für SSR entschieden. Was muss ich dafür besonders beachten?Ich möchte eine Session-Übersicht für alle 20 Vorträge unserer Konferenz erstellen. Die Sessions sollen nach Track, Konferenztag und Level gefiltert werden können. Alle Filter müssen gleichzeitig funktionieren (UND-Verknüpfung). Wie erweitere ich dafür mein bestehendes useSessions-Composable und wie teile ich die Umsetzung sinnvoll auf SessionFilterBar, SessionList und die Übersichtsseite auf? Außerdem haben wir uns für SSR entschieden. Was muss ich dafür besonders beachten?
+Ich muss eine Session-Übersicht für alle 20 Vorträge unserer Konferenz erstellen. Die Sessions sollen nach Track, Konferenztag und Level gefiltert werden können. Alle Filter müssen gleichzeitig funktionieren (UND-Verknüpfung). Wie erweitere ich dafür mein bestehendes useSessions-Composable und wie teile ich die Umsetzung sinnvoll auf SessionFilterBar, SessionList und die Übersichtsseite auf? Außerdem haben wir uns für SSR entschieden. Was muss ich dafür besonders beachten?
 ### Zweck:
 Ich wollte die filterbare Session-Übersicht umsetzen. Dafür habe ich Hilfe gebraucht bei der Erweiterung meines useSessions-Composables, der Aufteilung in Vue-Komponenten und der Umsetzung der SSR-Entscheidung.
 
