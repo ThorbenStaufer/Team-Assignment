@@ -27,7 +27,6 @@ const conference = useConference();
         v-model:level="selectedLevel"
         :tracks="availableTracks"
         :days="availableDays"
-        :speakers="speakers"
     />
 
     <p class="results">
@@ -35,8 +34,11 @@ const conference = useConference();
       {{ conference.sessions.length }} Vorträgen
     </p>
 
-    <SessionList :sessions="filteredSessions" />
-
+    <SessionList
+        :sessions="filteredSessions"
+        :tracks="availableTracks"
+        :speakers="speakers"
+    />
   </main>
 </template>
 

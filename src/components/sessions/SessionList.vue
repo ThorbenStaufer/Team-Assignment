@@ -1,22 +1,23 @@
 <script setup lang="ts">
 import type { Session } from '~/types/session';
+import type { Speaker } from '~/types/speaker';
+import type { Track } from '~/types/track';
 
-defineProps<{
+const props = defineProps<{
   sessions: Session[];
+  tracks: Track[];
+  speakers: Speaker[];
 }>();
 
-const { availableTracks } = useSessions();
-const { speakers } = useSpeakers();
-
 function getTrackName(trackId: string): string {
-  return availableTracks.value.find(
+  return props.tracks.find(
       (track) => track.id === trackId
   )?.name ?? trackId;
 }
 
 function getSpeakerNames(speakerIds: string[]): string {
   return speakerIds
-      .map((id) => speakers.value.find(
+      .map((id) => props.speakers.find(
           (speaker) => speaker.id === id
       )?.name)
       .filter((name) => name !== undefined)
