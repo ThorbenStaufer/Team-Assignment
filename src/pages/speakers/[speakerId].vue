@@ -20,8 +20,9 @@ const sessions = getSessionsBySpeaker(speakerId);
 </script>
 
 <template>
-  <main class="speaker-profile">
 
+  <main class="speaker-profile">
+    <base-card>
     <h1>{{ speaker.name }}</h1>
 
 
@@ -49,5 +50,19 @@ const sessions = getSessionsBySpeaker(speakerId);
         <p v-else>
           No sessions available.
         </p>
+    </base-card>
       </main>
     </template>
+
+<style scoped>
+.speaker-profile {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  background: var(--color-surface-secondary);
+  color: var(--color-text-primary);
+  font-family: var(--font-heading);
+}
+</style>

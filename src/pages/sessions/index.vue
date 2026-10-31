@@ -34,8 +34,9 @@ const conference = useConference();
       {{ filteredSessions.length }} von
       {{ conference.sessions.length }} Vorträgen
     </p>
-    
+
     <SessionList :sessions="filteredSessions" />
+
   </main>
 </template>
 
