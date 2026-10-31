@@ -5,28 +5,31 @@
   <div class="list-item">
 
     <div class="list-info">
-      <div class="list-track">
+      <div v-if="$slots.track" class="list-track">
         <slot name="track" />
       </div>
 
-      <div class="list-title">
+      <div v-if="$slots.title" class="list-title">
         <slot name="title" />
       </div>
 
-      <div class="list-speaker">
+      <div v-if="$slots.speaker" class="list-speaker">
         <slot name="speaker" />
+      </div>
+      <div v-else-if="$slots.room" class="list-room">
+        <slot name="room" />
       </div>
     </div>
 
-    <div class="list-level">
+    <div v-if="$slots.level" class="list-level">
       <slot name="level" />
     </div>
 
-    <div class="list-day">
+    <div v-if="$slots.day" class="list-day">
       <slot name="day" />
     </div>
 
-    <div class="list-time">
+    <div v-if="$slots.time" class="list-time">
       <slot name="time" />
     </div>
 
@@ -82,6 +85,12 @@
 }
 
 .list-speaker {
+  font: var(--font-body);
+  font-size: var(--font-size-body);
+  color: var(--color-text-secondary);
+}
+
+.list-room {
   font: var(--font-body);
   font-size: var(--font-size-body);
   color: var(--color-text-secondary);
