@@ -12,10 +12,6 @@
         <slot />
       </div>
 
-      <BaseButton>
-        View Session
-      </BaseButton>
-
     </div>
   </template>
 
