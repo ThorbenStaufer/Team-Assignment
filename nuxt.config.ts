@@ -10,6 +10,7 @@ export default defineNuxtConfig({
   // rendering strategy configuration
   routeRules: {
     '/schedule': { ssr: false },
+    '/sessions': { ssr: true, prerender: false },
     '/sessions/**': { prerender: true },
     '/speakers/**': { prerender: true }
   },
