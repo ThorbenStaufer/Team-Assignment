@@ -14,6 +14,8 @@ const {
 const { speakers } = useSpeakers();
 
 const conference = useConference();
+
+const { addSession } = useSchedule();
 </script>
 
 <template>
@@ -38,6 +40,7 @@ const conference = useConference();
         :sessions="filteredSessions"
         :tracks="availableTracks"
         :speakers="speakers"
+        @save-to-schedule="addSession($event)"
     />
   </main>
 </template>

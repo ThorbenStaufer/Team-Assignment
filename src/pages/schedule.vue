@@ -2,10 +2,10 @@
 const { mySchedule, removeSession } = useSchedule();
 const { getSession } = useSessions();
 
-const titleMap = new Map<string, string>();
-mySchedule.value.forEach((entry) => {
-    titleMap.set(entry.sessionId, getSession(entry.sessionId)?.title ?? '');
-});
+const titleMap = ref<Map<string, string>>(new Map());
+onMounted(() => mySchedule.value.forEach((entry) => {
+    titleMap.value.set(entry.sessionId, getSession(entry.sessionId)?.title ?? '');
+}));
 </script>
 
 <template>

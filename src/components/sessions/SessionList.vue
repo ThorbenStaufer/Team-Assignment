@@ -8,6 +8,9 @@ const props = defineProps<{
   tracks: Track[];
   speakers: Speaker[];
 }>();
+defineEmits<{
+  ( e: 'saveToSchedule', session: Session ): void;
+}>();
 
 function getTrackName(trackId: string): string {
   return props.tracks.find(
@@ -68,6 +71,7 @@ function getSpeakerNames(speakerIds: string[]): string {
         <NuxtLink :to="`/sessions/${session.id}`">
           Mehr ansehen
         </NuxtLink>
+        <button @click="$emit('saveToSchedule', session)">Speichern</button>
       </template>
     </BaseListElement>
 

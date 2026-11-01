@@ -5,6 +5,7 @@ import { useSessions } from '~/composables/useSessions';
 const route = useRoute();
 const { getSession, availableTracks, availableRooms } = useSessions();
 const { getSpeaker } = useSpeakers();
+const { addSession } = useSchedule();
 
 const sessionId = route.params.sessionId;
 const session = sessionId ? getSession(sessionId.toString()) : undefined;
@@ -18,7 +19,10 @@ if (!session) {
     <main class="center">
         <BaseCard class="main-content">
             <template #header>
-                {{ session?.title }}
+                <div class="title">
+                    <span>{{ session?.title }}</span>
+                    <button v-if="session" @click="addSession(session)">Speichern</button>
+                </div>
                 <div class="time">
                     {{ session?.day }}: {{ session?.startTime }} - {{ session?.endTime }}
                 </div>
@@ -54,6 +58,11 @@ if (!session) {
 .main-content {
     max-width: 35%;
     font-family: var(--font-heading);
+}
+
+.title {
+    display: flex;
+    justify-content: space-between;
 }
 
 .time {
