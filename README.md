@@ -2,7 +2,7 @@
 ## Clone Repository
 Clone the repository from GitHub:
 ```
-git clone https://github.com/ThorbenStaufer/Solo-Assignment-2.git
+git clone https://github.com/ThorbenStaufer/Team-Assignment.git
 ```
 ## Install Dependencies
 Open a terminal within the project folder and install dependencies via Node:
@@ -13,5 +13,5 @@ npm install
 Build the project and open a new browser tab to the localhost server:
 ```
 npx nuxt build
-npm run dev -- -o
+node .output/server/index.mjs
 ```
