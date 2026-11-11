@@ -25,5 +25,39 @@ export default defineNuxtConfig({
       ],
         crawlLinks: false,
     }
+  },
+
+  modules: ['@vite-pwa/nuxt'],
+  pwa: {
+    manifest: {
+      name: 'Shift',
+      theme_color: '#0156d7',
+      background_color: '#ffffff',
+      display: 'standalone',
+      start_url: '/sessions',
+      icons: [
+        {
+          src: 'Shift_Logo_Temp_144px.png',
+          sizes: '144x144',
+          type: 'image/png',
+        },
+        {
+          src: 'Shift_Logo_Temp_192px.png',
+          sizes: '192x192',
+          type: 'image/png',
+        },
+        {
+          src: 'Shift_Logo_Temp_512px.png',
+          sizes: '512x512',
+          type: 'image/png',
+        },
+      ]
+    },
+    workbox: {
+      globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
+    },
+    devOptions: {
+      enabled: true,
+    }
   }
 })

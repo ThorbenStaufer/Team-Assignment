@@ -3,6 +3,7 @@
 </script>
 
 <template>
+  <NuxtPwaManifest />
   <nav class="navigation">
     <NuxtLink to="/sessions">Übersicht</NuxtLink>
     <NuxtLink to="/schedule">Mein Programm</NuxtLink>
