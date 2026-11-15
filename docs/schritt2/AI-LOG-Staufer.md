@@ -11,3 +11,11 @@
 **Prompt**: The events presented in the detail pages can be saved to a local schedule via a composable, which persists the data in the browsers localStorage. Since the detail pages are statically generated at build time, I can't directly use the composable, as the localStorage does only exist on the client. How would I pull this off?
 
 **Zweck**: Recherche wie das localStorage-Composable von einer statisch generierten Seite aus verwendet werden kann; von der Antwort dieses Prompts wurde übernommen, dass der initiale localStorage Lese-Zugriff in einem onMounted-Hook stattfinden sollte.
+## 12.11.2026 - Claude Sonnet 5.5
+**Prompt**: Wir sollen nun unsere Applikation um PWA und Caching Strategien erweitern. Wir haben uns dafür entschieden den Großteil der App Caching-First zu implementieren und "Mein Programm" mit Network-First (da wir uns ja das Szenario vorstellen sollen, dass die App tatsächlich Internetzugang verwenden würde). Für die PWA Konfiguration verwenden wir vite-pwa/nuxt, da unser Code bereits Nuxt 4 verwendet. Klingt das so stimmig?
+
+**Zweck**: Einholung einer zusätzlichen Meinung zu unserer Caching-Strategie-Entscheidung. Die KI hatte einige Anmerkungen, die schlussendlich jedoch nicht übernommen wurden, da wir der Meinung waren, dass unsere Entscheidung im Kontext der Angabe die Richtige war.
+## 13.11.2026 - Claude Sonnet 5.5
+**Prompt**: I am using vite-pwa/nuxt and I have added workbox-core, workbox-precaching and workbox-routing as dev dependencies. VS Code displays following error on self.__WB_MANIFEST: Property '__WB_MANIFEST' does not exist on type 'Window & typeof globalThis'. ts(2339). How do I fix this?
+
+**Zweck**: Beheben eines Fehler in der Umsetzung eines eigenen Service Workers. Wurde am Ende nicht benötigt, da wir unsere Caching Strategien im "generateSW" Modus umgesetzt haben.
