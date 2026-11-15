@@ -3,20 +3,20 @@
 ## Kontext
 Unsere Konferenzwebsite „Shift“ soll auch bei einer schlechten oder fehlenden Internetverbindung möglichst gut funktionieren, denn gerade auf einer Konferenz kann das WLAN überlastet sein. Besucher*innen sollen deshalb weiterhin auf bereits geladene Sessions, Speaker-Informationen und ihr persönliches Programm zugreifen können. Und da sich nicht alle Inhalte gleich häufig ändern, haben wir uns für unterschiedliche Caching-Strategien entschieden
 ## Optionen
-Cache First: Bereits gespeicherte Inhalte werden zuerst aus dem Cache geladen. Das ermöglicht schnelle Ladezeiten und die Offline-Nutzung. Allerdings können Informationen veraltet sein.
+Cache First: Bereits gespeicherte Inhalte werden zuerst aus dem Cache geladen. Das ermöglicht schnelle Ladezeiten und die Offline-Nutzung, allerdings können Informationen veraltet sein.
 
 Network First: Zuerst wird versucht, die aktuelle Version aus dem Internet zu laden. Falls keine Verbindung besteht, wird auf den Cache zurückgegriffen. Bei schlechtem Internet können dadurch längere Wartezeiten entstehen.
 
 Stale While Revalidate: Gespeicherte Inhalte werden sofort angezeigt und gleichzeitig im Hintergrund aktualisiert. Dadurch können Änderungen nachgeladen werden, allerdings sehen Nutzer*innen zunächst möglicherweise veraltete Informationen.
 
 ## Entscheidung
-Für die Session- und Speaker-Seiten verwenden wir Cache First, da sich das Konferenzprogramm normalerweise selten verändert. Damit bereits geladene Informationen auch offline schnell verfügbar sind.
+Für die Session- und Speaker-Seiten verwenden wir Cache First, da sich das Konferenzprogramm normalerweise selten verändert. Damit sind bereits geladene Informationen auch offline schnell verfügbar.
 Für die Seite „Mein Programm“ verwenden wir Network First. Dadurch wird bei bestehender Internetverbindung zuerst die aktuelle Seite geladen und bei Verbindungsproblemen auf eine gespeicherte Version zurückgegriffen.
 Die statischen Dateien der Website, beispielsweise JavaScript, CSS und Icons, werden über den Precache bereitgestellt.
 
 ## Konsequenzen
 Durch die Kombination verschiedener Caching-Strategien kann die Website nach einem Online-Besuch teilweise ohne Internetverbindung genutzt werden. Die grundlegende Oberfläche und bereits gespeicherte Seiten stehen weiterhin zur Verfügung.
-Ein Nachteil von Cache First ist, dass kurzfristige Änderungen am Konferenzprogramm nicht sofort sichtbar sein müssen. Network First benötigt dagegen bei fehlender Verbindung möglicherweise etwas Zeit, bevor der Cache verwendet wird. Ein erstmaliger Besuch ohne Internet ist nicht möglich, wenn die erforderlichen Dateien noch nicht gespeichert wurden.
+Ein Nachteil von Cache First ist, dass kurzfristige Änderungen am Konferenzprogramm nicht sofort sichtbar sind. Network First benötigt dagegen bei fehlender Verbindung möglicherweise etwas Zeit, bevor der Cache verwendet wird. Ein erstmaliger Besuch ohne Internet ist nicht möglich, wenn die erforderlichen Dateien noch nicht gespeichert wurden.
 
 ## Testszenarien
 ### Szenario 1: Session-Übersicht offline
@@ -24,9 +24,9 @@ Ausgangslage: Die Konferenzwebsite wurde zunächst im Produktionsmodus mit beste
 
 Aktion: Anschließend wurde in den Chrome DevTools im Network-Tab der Offline-Modus aktiviert. Danach wurde die Session-Übersicht erneut geladen, um zu überprüfen, ob die Seite ohne Internetverbindung weiterhin funktioniert.
 
-Beobachtetes Verhalten: Die Session-Übersicht konnte auch offline angezeigt werden. Damit wurde bestätigt, dass die zuvor gespeicherten Inhalte verfügbar sind. Beim weiteren Scrollen durch die Sessions traten jedoch teilweise Fehler beim Laden zusätzlicher Nuxt-Payload-Dateien auf.
+Beobachtetes Verhalten: Die Session-Übersicht konnte auch offline angezeigt werden. Damit wurde bestätigt, dass die zuvor gespeicherten Inhalte verfügbar sind. Beim weiteren Scrollen durch die Sessions traten jedoch teilweise Fehler beim Laden zusätzlicher Nuxt-Payload-Dateien auf. Wurde zuvor bei aktivierter Netwerkverbindung über die Seite gescrolled, traten diese Fehler im Offline-Modus nicht mehr auf.
 
-Ergebnis: Die grundlegende Offline-Anzeige funktioniert. Das vollständige Nachladen von Inhalten ist allerdings noch nicht zuverlässig auch wenn es den Anschein hat das alles passt.
+Ergebnis: Die grundlegende Offline-Anzeige funktioniert. Das vollständige Nachladen von Inhalten ist allerdings noch nicht zuverlässig auch wenn es den Anschein hat das alles passt. Scheinbar werden nur jene Daten gecached, die sich im Viewport der Benutzer*innen befunden haben.
 
 ### Szenario 2: Mein Programm offline
 Ausgangslage: Die Konferenzwebsite wurde zunächst online geöffnet. Anschließend wurden mehrere Sessions zum persönlichen Programm hinzugefügt. Diese Auswahl wurde im Local Storage des Browsers gespeichert. Auch die Seite /schedule wurde bei bestehender Internetverbindung aufgerufen, damit sie im Cache abgelegt werden konnte.
@@ -49,3 +49,5 @@ Ergebnis: Ein Erstbesuch ohne Internet ist ein bewusst akzeptierter Grenzfall un
 
 ## Cross-Review
 Der erste Entwurf des Entscheidungsprotokolls wurde von Lea Sahiner erstellt.
+Anschließend hat Thorben Staufer die beschriebenen Caching-Entscheidungen überprüft, die Testszenarien selbst durchgeführt und die Ergebnisse ergänzt beziehungsweise korrigiert.
+Abweichungen zwischen den Testergebnissen wurden gemeinsam besprochen und in der endgültigen Dokumentation berücksichtigt.
