@@ -48,3 +48,24 @@ reicht das für ssr rendering wirklich aus oder muss ich noch was machen damit e
 }
 ### Zweck:
 Ich wollte überprüfen, ob die Session-Übersicht tatsächlich mit SSR gerendert wird und wie sich das anhand des Builds und des HTML-Quelltexts nachweisen lässt.
+
+## 11.11.26 ChatGPT
+### Prompt:
+Folgendes sind unsere Caching Entscheidungen: Caching First für Sessions-/Speaker-Daten & statische Assets und Network First für „Mein Programm“,  macht das für unsere Webseite sinn und wenn nein warum nicht?
+
+### Zweck:
+Ich wollte absichern ob unsere Entscheidung sinnvoll sind
+
+## 12.11.26 ChatGPT
+### Prompt:
+Ich habe das problem dass er den cache nicht richtig speichert  von schedules und sessions sondern nur den precache anzeigt woran könnte das liegen? (Nuxt Config Code wurde mitgeschickt)
+
+### Zweck:
+Meinen Bug beim Cache im Nuxt Config fixen
+
+##13.11.26  ChatGPT
+### Prompt:
+Wie genau mach ich ein lighthouse audit & was ist das?
+
+### Zweck:
+Ich kannte das nicht und brauchte daher Hilfe
