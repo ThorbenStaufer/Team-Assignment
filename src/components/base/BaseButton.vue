@@ -21,6 +21,17 @@
   border: none;
   border-radius: var(--radius-full);
   box-shadow: 0 4px 12px var(--color-shadow);
+  cursor: pointer;
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.button:active {
+  transform: scale(0.95);
+  box-shadow: 0 1px 3px var(--color-shadow);
+}
+
+.button:hover {
+  filter: brightness(1.08);
 }
 
 .button-input {

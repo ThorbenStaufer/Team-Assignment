@@ -29,7 +29,7 @@ defineEmits<{
                 <NuxtLink :to="`/sessions/${entry.sessionId}`">
                     Mehr ansehen
                 </NuxtLink>
-                <button @click="$emit('remove', entry.sessionId)">X</button>
+                <base-button class="button" @click="$emit('remove', entry.sessionId)">X</base-button>
             </template>
         </BaseListElement>
     </main>
@@ -42,6 +42,10 @@ defineEmits<{
     gap: var(--space-3);
     color: var(--color-text-primary);
     font-family: var(--font-heading);
+}
+
+.button {
+  background-color: var(--color-error-500);
 }
 
 .list-header {
