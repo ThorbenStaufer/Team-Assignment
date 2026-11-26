@@ -17,8 +17,18 @@ onMounted(() => mySchedule.value.forEach((entry) => {
 
 <style lang="css" scoped>
 .schedule-page {
-  background: var(--color-surface-secondary);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-6);
+  box-sizing: border-box;
+
   color: var(--color-text-primary);
   font-family: var(--font-heading);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-6);
 }
 </style>

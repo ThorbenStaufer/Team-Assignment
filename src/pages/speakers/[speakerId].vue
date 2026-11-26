@@ -71,7 +71,6 @@ const sessions = getSessionsBySpeaker(speakerId);
   min-height: 100vh;
   padding: var(--space-6);
   box-sizing: border-box;
-  background: var(--color-surface-secondary);
   color: var(--color-text-primary);
 }
 

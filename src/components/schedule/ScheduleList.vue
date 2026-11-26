@@ -15,10 +15,10 @@ defineEmits<{
 <template>
     <main class="schedule-list">
         <div class="list-header">
-            <div />
-            <div>Tag</div>
-            <div>Zeit</div>
-            <div />
+          <div>Vortrag</div>
+          <div>Tag</div>
+          <div>Zeit</div>
+          <div />
         </div>
         <BaseListElement v-for="entry in schedule" :key="entry.sessionId">
             <template #title>{{ titleMap.get(entry.sessionId) }}</template>
@@ -26,16 +26,31 @@ defineEmits<{
             <template #day>{{ entry.day }}</template>
             <template #time>{{ entry.startTime }}-{{ entry.endTime }}</template>
             <template #action>
-                <NuxtLink :to="`/sessions/${entry.sessionId}`">
-                    Mehr ansehen
-                </NuxtLink>
+              <div class="schedule-actions">
                 <base-button class="button" @click="$emit('remove', entry.sessionId)">X</base-button>
+                <NuxtLink :to="`/sessions/${entry.sessionId}`" class="details-link">
+                  Mehr ansehen →
+                </NuxtLink>
+              </div>
             </template>
         </BaseListElement>
     </main>
 </template>
 
 <style lang="css" scoped>
+
+.schedule-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
+.details-link {
+    overflow-wrap: anywhere;
+}
+
 .schedule-list {
     display: flex;
     flex-direction: column;
@@ -52,11 +67,13 @@ defineEmits<{
   display: grid;
 
   grid-template-columns:
-  minmax(0, 1.9fr)
-  minmax(90px, 0.7fr)
-  minmax(100px, 0.7fr)
-  minmax(110px, 1fr)
-  10px;
+      minmax(0, 3fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, 1.4fr);
+
+  padding: 0 var(--spacing-card-padding);
+  gap: var(--spacing-card-padding);
 
   font: var(--font-body);
   font-size: var(--font-size-small-body);

@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="list-item">
+  <div class="list-item" :class="{ 'without-level': !$slots.level }">
 
     <div class="list-info">
       <div v-if="$slots.track" class="list-track">
@@ -60,6 +60,14 @@
   padding: var(--spacing-card-padding);
   border-radius: var(--radius-card);
   box-shadow: 0 8px 24px var(--color-shadow-light);
+}
+
+.list-item.without-level {
+  grid-template-columns:
+      minmax(0, 3fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, 1.4fr);
 }
 
 .list-info {
