@@ -42,7 +42,7 @@ export default defineNuxtConfig({
     }
   },
 
-  modules: ['@vite-pwa/nuxt'],
+  modules: ['@vite-pwa/nuxt', '@nuxt/eslint'],
   pwa: {
     manifest: {
       name: 'Shift',
@@ -72,7 +72,7 @@ export default defineNuxtConfig({
     },
     workbox: {
       globPatterns: ['**/*.{js,css,html,png,svg,ico}'],
-      
+
       navigateFallback: null,
 
       runtimeCaching: [

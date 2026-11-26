@@ -15,10 +15,10 @@ defineEmits<{
 <template>
     <main class="schedule-list">
         <div class="list-header">
-            <div></div>
+            <div />
             <div>Tag</div>
             <div>Zeit</div>
-            <div></div>
+            <div />
         </div>
         <BaseListElement v-for="entry in schedule" :key="entry.sessionId">
             <template #title>{{ titleMap.get(entry.sessionId) }}</template>

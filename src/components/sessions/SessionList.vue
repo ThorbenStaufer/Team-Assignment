@@ -32,11 +32,11 @@ function getSpeakerNames(speakerIds: string[]): string {
   <div class="session-list">
 
     <div class="list-header">
-      <div></div>
+      <div />
       <div>Level</div>
       <div>Tag</div>
       <div>Zeit</div>
-      <div></div>
+      <div />
     </div>
 
     <BaseListElement

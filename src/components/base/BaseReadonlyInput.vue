@@ -10,7 +10,7 @@ defineProps<Props>();
 <template>
     <label>
         {{ label }}:
-        <input type="text" :value readonly class="readonly" />
+        <input type="text" :value readonly class="readonly" >
     </label>
 </template>
 
