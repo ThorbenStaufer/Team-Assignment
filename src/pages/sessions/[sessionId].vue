@@ -21,7 +21,6 @@ if (!session) {
             <template #header>
                 <div class="title">
                     <span>{{ session?.title }}</span>
-                    <button v-if="session" @click="addSession(session)">Speichern</button>
                 </div>
                 <div class="time">
                     {{ session?.day }}: {{ session?.startTime }} - {{ session?.endTime }}
@@ -42,22 +41,39 @@ if (!session) {
                         <NuxtLink v-for="speaker in session?.speakerIds" :key="speaker" :to="`/speakers/${speaker}`" class="navigation-link">{{ getSpeaker(speaker)?.name }}</NuxtLink>
                     </div>
                 </div>
+              <div class="button-container">
+                <BaseButton v-if="session" @click="addSession(session)">
+                  Speichern
+                </BaseButton>
+              </div>
             </template>
         </BaseCard>
     </main>
 </template>
 
 <style lang="css" scoped>
+
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: var(--space-6);
+  box-sizing: border-box;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-6);
 }
 
 .main-content {
-    max-width: 35%;
-    font-family: var(--font-heading);
+  width: 100%;
+  max-width: 700px;
+  min-width: 0;
+  box-sizing: border-box;
+  font-family: var(--font-heading);
 }
 
 .title {
@@ -69,7 +85,9 @@ if (!session) {
     font-size: var(--font-size-body);
     font-weight: var(--font-weight-body);
     color: var(--color-text-secondary);
+    margin-top: var(--space-2);
 }
+
 
 .abstract {
     color: var(--color-text-primary);
@@ -77,16 +95,22 @@ if (!session) {
 }
 
 .details {
-    display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  gap: var(--space-4);
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: var(--space-4);
+  margin-top: var(--space-2);
 }
 
 .speaker {
     margin-top: calc(var(--spacing-section) / 2);
 }
 
-.links {
-    display: flex;
-    justify-content: space-evenly;
-    gap: 1rem;
-}
+
 </style>
