@@ -44,11 +44,11 @@
 .list-item {
   display: grid;
   grid-template-columns:
-    minmax(0, 2.0fr)
-    minmax(90px, 0.7fr)
-    minmax(100px, 0.7fr)
-    minmax(100px, 0.7fr)
-    auto;
+      minmax(0, 3fr)
+      minmax(0, 1.2fr)
+      minmax(0, 1fr)
+      minmax(0, 1fr)
+      minmax(0, 1.4fr);
 
   align-items: center;
   gap: var(--spacing-card-padding);

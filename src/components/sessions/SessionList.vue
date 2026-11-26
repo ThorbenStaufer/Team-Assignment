@@ -2,6 +2,7 @@
 import type { Session } from '~/types/session';
 import type { Speaker } from '~/types/speaker';
 import type { Track } from '~/types/track';
+import BaseButton from '~/components/base/BaseButton.vue'
 
 const props = defineProps<{
   sessions: Session[];
@@ -32,7 +33,7 @@ function getSpeakerNames(speakerIds: string[]): string {
   <div class="session-list">
 
     <div class="list-header">
-      <div />
+      <div>Vortrag</div>
       <div>Level</div>
       <div>Tag</div>
       <div>Zeit</div>
@@ -68,10 +69,12 @@ function getSpeakerNames(speakerIds: string[]): string {
       </template>
 
       <template #action>
-        <NuxtLink :to="`/sessions/${session.id}`">
-          Mehr ansehen
-        </NuxtLink>
-        <button @click="$emit('saveToSchedule', session)">Speichern</button>
+        <div class="session-actions">
+          <BaseButton @click="$emit('saveToSchedule', session)">Speichern</BaseButton>
+          <NuxtLink :to="`/sessions/${session.id}`">
+            Mehr ansehen →
+          </NuxtLink>
+        </div>
       </template>
     </BaseListElement>
 
@@ -89,15 +92,25 @@ function getSpeakerNames(speakerIds: string[]): string {
   gap: var(--space-3);
 }
 
+.session-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+}
+
 .list-header {
   display: grid;
+  padding: 0 var(--space-6);
+
 
   grid-template-columns:
-  minmax(0, 1.9fr)
-  minmax(90px, 0.7fr)
-  minmax(100px, 0.7fr)
-  minmax(110px, 1fr)
-  10px;
+  minmax(0, 3fr)
+  minmax(0, 1.2fr)
+  minmax(0, 1fr)
+  minmax(0, 1fr)
+  minmax(0, 1.4fr);
 
   font: var(--font-body);
   font-size: var(--font-size-small-body);

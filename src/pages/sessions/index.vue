@@ -47,8 +47,24 @@ const { addSession } = useSchedule();
 
 <style scoped>
 .sessions-page {
-  background: var(--color-surface-secondary);
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: var(--space-6);
+  box-sizing: border-box;
+
   color: var(--color-text-primary);
   font-family: var(--font-heading);
+}
+
+h1 {
+  margin-top: 0;
+  margin-bottom: var(--space-2);
+}
+
+.results {
+  color: var(--color-text-secondary);
+  font-size: var(--font-size-small-body);
+  margin: var(--space-6) 0 var(--space-4);
 }
 </style>
