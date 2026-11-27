@@ -123,18 +123,25 @@ function resetTimeRange(): void {
 
 <style scoped>
 .time-range {
-  display: inline-flex;
+  display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-2);
   border: none;
   padding: 0;
-  margin: 0;
+  margin: 1rem 0;
 }
 
 .time-range legend {
-  float: left;
+  position: relative;
+  top: 0;
   padding: 0;
+  font-size: var(--font-size-small-body);
+  color: var(--color-text-secondary)
+}
+
+.time-range label {
+  margin: .5rem;
 }
 
 .time-range-error {
