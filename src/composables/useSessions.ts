@@ -8,14 +8,25 @@ export function useSessions() {
     const selectedTrackId = ref<string>('');
     const selectedDay = ref<string>('');
     const selectedLevel = ref<SessionLevel | ''>('');
+    // Zeitspanne im Format "HH:MM"; leerer String = keine Begrenzung auf dieser Seite
+    const selectedTimeFrom = ref<string>('');
+    const selectedTimeTo = ref<string>('');
+
+    // "HH:MM"-Strings sind zero-padded und damit lexikographisch vergleichbar
+    function isWithinTimeRange(time: string): boolean {
+        const afterFrom = !selectedTimeFrom.value || time >= selectedTimeFrom.value;
+        const beforeTo = !selectedTimeTo.value || time <= selectedTimeTo.value;
+        return afterFrom && beforeTo;
+    }
 
     const filteredSessions = computed<Session[]>(() => {
         return conference.value.sessions.filter((session) => {
             const trackFilter = !selectedTrackId.value || session.trackId === selectedTrackId.value;
             const dayFilter = !selectedDay.value || session.day === selectedDay.value;
             const levelFilter = !selectedLevel.value || session.level === selectedLevel.value;
+            const timeFilter = isWithinTimeRange(session.startTime) || isWithinTimeRange(session.endTime);
 
-            return trackFilter && dayFilter && levelFilter;
+            return trackFilter && dayFilter && levelFilter && timeFilter;
         });
     });
 
@@ -33,5 +44,5 @@ export function useSessions() {
         );
     }
 
-    return { selectedTrackId, selectedDay, selectedLevel, filteredSessions, availableTracks, availableDays, availableRooms, getSession, getSessionsBySpeaker };
+    return { selectedTrackId, selectedDay, selectedLevel, selectedTimeFrom, selectedTimeTo, filteredSessions, availableTracks, availableDays, availableRooms, getSession, getSessionsBySpeaker };
 }

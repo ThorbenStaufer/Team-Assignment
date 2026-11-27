@@ -6,6 +6,8 @@ const {
   selectedTrackId,
   selectedDay,
   selectedLevel,
+  selectedTimeFrom,
+  selectedTimeTo,
   filteredSessions,
   availableTracks,
   availableDays
@@ -27,6 +29,8 @@ const { addSession } = useSchedule();
         v-model:track="selectedTrackId"
         v-model:day="selectedDay"
         v-model:level="selectedLevel"
+        v-model:time-from="selectedTimeFrom"
+        v-model:time-to="selectedTimeTo"
         :tracks="availableTracks"
         :days="availableDays"
     />
