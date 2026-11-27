@@ -33,3 +33,6 @@ Lea: Ich würde KI nicht für kreative Designentscheidungen einsetzen. Bei unser
 
 Thorben: KI eignet sich super fürs Generieren von Boilerplate oder zum Austausch über Probleme/Verbesserungen, allerdings würde ich sie keine eigenständigen Entscheidungen durchführen lassen. Design-Entscheidungen, wie wir sie in den ADR's getroffen haben, benötigt die KI als Rahmen und sollte daher auch von Menschenhand verfasst werden. Ebenfalls habe ich des öfteren mitbekommen, dass die KI Entscheidungen treffen würde, die entweder den Rahmen sprengen oder nicht in das von uns angedachte Gesamtbild passen, weswegen menschliches Review definitiv notwendig ist.
 
+### Gemeinsame Schlussbemerkung
+Wir stimmen beide darin überein, dass uns die Arbeitserleichterung und die Möglichkeiten, die KI bieten kann, positiv überrascht hat. Gleichzeitig finden wir aber auch, dass die KI teilweise zu viel macht und bestimmte Entscheidungen über das Design und die Wirkung eines Projekts in Menschenhand bleiben sollte.
+
